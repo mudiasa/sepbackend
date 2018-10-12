@@ -1,0 +1,10 @@
+/Users/niveotech/Desktop/sepbackend/bin/Debug/netcoreapp2.0/sepbackend.deps.json
+/Users/niveotech/Desktop/sepbackend/bin/Debug/netcoreapp2.0/sepbackend.runtimeconfig.json
+/Users/niveotech/Desktop/sepbackend/bin/Debug/netcoreapp2.0/sepbackend.runtimeconfig.dev.json
+/Users/niveotech/Desktop/sepbackend/bin/Debug/netcoreapp2.0/sepbackend.dll
+/Users/niveotech/Desktop/sepbackend/bin/Debug/netcoreapp2.0/sepbackend.pdb
+/Users/niveotech/Desktop/sepbackend/obj/Debug/netcoreapp2.0/sepbackend.csproj.CoreCompileInputs.cache
+/Users/niveotech/Desktop/sepbackend/obj/Debug/netcoreapp2.0/sepbackend.AssemblyInfoInputs.cache
+/Users/niveotech/Desktop/sepbackend/obj/Debug/netcoreapp2.0/sepbackend.AssemblyInfo.cs
+/Users/niveotech/Desktop/sepbackend/obj/Debug/netcoreapp2.0/sepbackend.dll
+/Users/niveotech/Desktop/sepbackend/obj/Debug/netcoreapp2.0/sepbackend.pdb
