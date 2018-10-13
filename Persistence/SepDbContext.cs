@@ -11,5 +11,9 @@ namespace sepbackend.Persistence
         }
 
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Request> Requests { get; set; }
+        public DbSet<Preference> Preferences { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

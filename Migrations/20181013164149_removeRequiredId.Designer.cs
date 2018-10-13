@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181013164149_removeRequiredId")]
+    partial class removeRequiredId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,11 +78,7 @@ namespace sepbackend.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<int>("RequestId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("RequestId");
 
                     b.ToTable("Preferences");
                 });
@@ -171,14 +168,6 @@ namespace sepbackend.Migrations
                     b.HasOne("sepbackend.Core.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("sepbackend.Core.Models.Preference", b =>
-                {
-                    b.HasOne("sepbackend.Core.Models.Request", "Request")
-                        .WithMany()
-                        .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

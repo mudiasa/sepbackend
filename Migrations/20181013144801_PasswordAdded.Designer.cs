@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181013144801_PasswordAdded")]
+    partial class PasswordAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,8 +107,6 @@ namespace sepbackend.Migrations
 
                     b.Property<DateTime>("FinishDate");
 
-                    b.Property<int>("NumberOfAttendees");
-
                     b.Property<string>("RecordNumber")
                         .IsRequired()
                         .HasMaxLength(255);
@@ -115,6 +114,8 @@ namespace sepbackend.Migrations
                     b.Property<DateTime>("StartDate");
 
                     b.Property<int>("UserId");
+
+                    b.Property<int>("numberOfAttendees");
 
                     b.HasKey("Id");
 
@@ -177,7 +178,7 @@ namespace sepbackend.Migrations
             modelBuilder.Entity("sepbackend.Core.Models.Preference", b =>
                 {
                     b.HasOne("sepbackend.Core.Models.Request", "Request")
-                        .WithMany()
+                        .WithMany("Preferences")
                         .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

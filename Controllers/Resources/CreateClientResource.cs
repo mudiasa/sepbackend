@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace sepbackend.Core.Models
+namespace sepbackend.Controllers.Resources
 {
-    public class Client
+    public class CreateClientResource
     {
         public int Id { get; set; }
         [Required]

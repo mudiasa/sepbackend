@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181013165935_ClientIdInstead")]
+    partial class ClientIdInstead
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,15 +74,17 @@ namespace sepbackend.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("CliendId");
+
+                    b.Property<int?>("ClientId");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<int>("RequestId");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("RequestId");
+                    b.HasIndex("ClientId");
 
                     b.ToTable("Preferences");
                 });
@@ -176,10 +179,9 @@ namespace sepbackend.Migrations
 
             modelBuilder.Entity("sepbackend.Core.Models.Preference", b =>
                 {
-                    b.HasOne("sepbackend.Core.Models.Request", "Request")
+                    b.HasOne("sepbackend.Core.Models.Client", "Client")
                         .WithMany()
-                        .HasForeignKey("RequestId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClientId");
                 });
 
             modelBuilder.Entity("sepbackend.Core.Models.Request", b =>
