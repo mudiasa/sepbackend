@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using sepbackend.Controllers.Resources;
@@ -20,7 +21,7 @@ namespace sepbackend.Controllers
             this.context = context;
 
         }
-
+        [EnableCors("AllowAll")]
         [HttpGet]
         public async Task<IEnumerable<UserResource>> GetUsers()
         {

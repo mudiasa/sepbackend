@@ -38,6 +38,22 @@ namespace sepbackend
             {
                 c.SwaggerDoc("v1", new Info { Title = "SEP API", Version = "v1" });
             });
+
+            //Add Cors service
+            services.AddCors(options =>
+            {
+                {
+                    options.AddPolicy("AllowAll",
+                        builder =>
+                        {
+                            builder
+                                .AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader()
+                                .AllowCredentials();
+                        });
+                }
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +63,8 @@ namespace sepbackend
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowAll");
 
             app.UseMvc();
         }
