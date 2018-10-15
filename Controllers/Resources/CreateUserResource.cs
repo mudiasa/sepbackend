@@ -7,7 +7,7 @@ namespace sepbackend.Controllers.Resources
         public int Id { get; set; }
         [Required]
         [StringLength(255)]
-        public string UserName { get; set; }
+        public string Username { get; set; }
         [Required]
         [StringLength(255)]
         public string Password { get; set; }

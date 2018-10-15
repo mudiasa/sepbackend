@@ -8,6 +8,8 @@ namespace sepbackend.Controllers.Resources
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        [StringLength(400)]
+        public string Description { get; set; }
         
         [Required]
         public int RequestId { get; set; }

@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181015084734_propertiesAddedAgain")]
+    partial class propertiesAddedAgain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,13 +52,11 @@ namespace sepbackend.Migrations
 
                     b.Property<int>("ClientId");
 
-                    b.Property<string>("FinishDate")
-                        .IsRequired();
+                    b.Property<DateTime>("FinishDate");
 
                     b.Property<int>("NumberOfAttendees");
 
-                    b.Property<string>("StartDate")
-                        .IsRequired();
+                    b.Property<DateTime>("StartDate");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -113,8 +112,7 @@ namespace sepbackend.Migrations
 
                     b.Property<int>("ExpectedBudget");
 
-                    b.Property<string>("FinishDate")
-                        .IsRequired();
+                    b.Property<DateTime>("FinishDate");
 
                     b.Property<int>("NumberOfAttendees");
 
@@ -122,8 +120,7 @@ namespace sepbackend.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<string>("StartDate")
-                        .IsRequired();
+                    b.Property<DateTime>("StartDate");
 
                     b.Property<int>("UserId");
 

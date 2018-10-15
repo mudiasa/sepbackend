@@ -11,9 +11,13 @@ namespace sepbackend.Controllers.Resources
         [StringLength(255)]
         public string Type { get; set; }
         [Required]
-        public DateTime StartDate { get; set; }
+        public int NumberOfAttendees { get; set; }
         [Required]
-        public DateTime FinishDate { get; set; }
+        public int Budget { get; set; }
+        [Required]
+        public string StartDate { get; set; }
+        [Required]
+        public string FinishDate { get; set; }
 
         [Required]
         public int ClientId { get; set; }
