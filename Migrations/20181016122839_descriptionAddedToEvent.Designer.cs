@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181016122839_descriptionAddedToEvent")]
+    partial class descriptionAddedToEvent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,13 +52,7 @@ namespace sepbackend.Migrations
 
                     b.Property<int>("ClientId");
 
-                    b.Property<string>("ClientName")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("ClientPhone")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("Description");
+                    b.Property<int>("Description");
 
                     b.Property<string>("FinishDate")
                         .IsRequired();

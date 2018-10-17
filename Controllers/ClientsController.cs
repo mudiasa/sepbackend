@@ -28,11 +28,6 @@ namespace sepbackend.Controllers
             return mapper.Map<List<Client>, List<ClientResource>>(clients);
         }
 
-        // [HttpGet("{id}")]
-        // public async Task<Client> GetClient(int id)
-        // {
-        //     return await context.Clients.FindAsync(id);
-        // }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetClient(int id)

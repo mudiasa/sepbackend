@@ -56,6 +56,40 @@ namespace sepbackend.Controllers
             return Ok(result);
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateEventResource updateEventResource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var myEvent = await context.Events.FindAsync(id);
+            mapper.Map<CreateEventResource, Event>(updateEventResource, myEvent);
+
+            await context.SaveChangesAsync();
+
+            var result = mapper.Map<Event, CreateEventResource>(myEvent);
+            return Ok(result);
+
+        }
+
+        // [HttpPut("{id}")]
+        // public async Task<IActionResult> UpdateEvent(int id, [FromBody] CreateEventResource updateEventResource)
+        // {
+        //     if (!ModelState.IsValid)
+        //         return BadRequest(ModelState);
+
+        //     var myEvent = await context.Events.FindAsync(id);
+
+        
+        //     mapper.Map<CreateEventResource, Event>(updateEventResource);
+        
+        //     await context.SaveChangesAsync();
+        //     var result = mapper.Map<Event, EventResource>(myEvent);
+        //     return Ok(result);
+
+        // }
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEvent(int id)
         {

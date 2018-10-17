@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181016172028_descriptionToString")]
+    partial class descriptionToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,12 +51,6 @@ namespace sepbackend.Migrations
                     b.Property<int>("Budget");
 
                     b.Property<int>("ClientId");
-
-                    b.Property<string>("ClientName")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("ClientPhone")
-                        .HasMaxLength(255);
 
                     b.Property<string>("Description");
 

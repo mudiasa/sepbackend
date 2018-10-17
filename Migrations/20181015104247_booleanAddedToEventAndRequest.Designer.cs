@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181015104247_booleanAddedToEventAndRequest")]
+    partial class booleanAddedToEventAndRequest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,14 +52,6 @@ namespace sepbackend.Migrations
 
                     b.Property<int>("ClientId");
 
-                    b.Property<string>("ClientName")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("ClientPhone")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("Description");
-
                     b.Property<string>("FinishDate")
                         .IsRequired();
 
@@ -75,11 +68,11 @@ namespace sepbackend.Migrations
 
                     b.Property<bool>("isCreated");
 
-                    b.Property<bool>("isSentToCSManager");
+                    b.Property<bool>("isSentBackToSubTeams");
 
-                    b.Property<bool>("isSentToProdManagers");
+                    b.Property<bool>("isSentToAdminManager");
 
-                    b.Property<bool>("isSentToSubTeams");
+                    b.Property<bool>("isSentToProdManager");
 
                     b.HasKey("Id");
 

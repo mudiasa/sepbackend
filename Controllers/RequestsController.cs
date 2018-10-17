@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using sepbackend.Controllers.Resources;
@@ -54,6 +55,22 @@ namespace sepbackend.Controllers
             await context.SaveChangesAsync();
             var result = mapper.Map<Request, RequestResource>(request);
             return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateRequestResource updateRequestResource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var request = await context.Requests.FindAsync(id);
+            mapper.Map<CreateRequestResource, Request>(updateRequestResource, request);
+       
+            await context.SaveChangesAsync();
+            
+            var result = mapper.Map<Request, RequestResource>(request);
+            return Ok(result);
+
         }
 
         [HttpDelete("{id}")]

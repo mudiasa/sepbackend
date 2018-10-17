@@ -12,6 +12,11 @@ namespace sepbackend.Controllers.Resources
         public string Type { get; set; }
         [Required]
         public int NumberOfAttendees { get; set; }
+        public string Description { get; set; }
+        [StringLength(255)]
+        public string ClientName { get; set; }
+        [StringLength(255)]
+        public string ClientPhone { get; set; }
         [Required]
         public int Budget { get; set; }
         [Required]
@@ -23,6 +28,10 @@ namespace sepbackend.Controllers.Resources
         public int ClientId { get; set; }
         [Required]
         public int UserId { get; set; }
+        public Boolean isCreated { get; set; }
+        public Boolean isSentToCSManager { get; set; }
+        public Boolean isSentToProdManagers { get; set; }
+        public Boolean isSentToSubTeams { get; set; }
 
         
     }

@@ -11,9 +11,10 @@ using System;
 namespace sepbackend.Migrations
 {
     [DbContext(typeof(SepDbContext))]
-    partial class SepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181017062406_clientDataAdded")]
+    partial class clientDataAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

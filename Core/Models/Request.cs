@@ -29,5 +29,11 @@ namespace sepbackend.Core.Models
         [Required]
         public int UserId { get; set; }
         public User User { get; set; }
+
+        public Boolean isSentToCSManager { get; set; }
+        public Boolean isSentToFinanceManager { get; set; }
+        public Boolean isSentToAdminManager { get; set; }
+        public Boolean isSentBackToCSManager { get; set; }
+        
     }
 }

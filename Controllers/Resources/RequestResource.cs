@@ -16,6 +16,10 @@ namespace sepbackend.Controllers.Resources
         public int numberOfAttendees { get; set; }
         public int ExpectedBudget { get; set; }
         public int UserId { get; set; }
+        public Boolean isSentToCSManager { get; set; }
+        public Boolean isSentToFinanceManager { get; set; }
+        public Boolean isSentToAdminManager { get; set; }
+        public Boolean isSentBackToCSManager { get; set; }
         
     }
 }
